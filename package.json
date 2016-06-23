@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/JesusHV/amco_test.git"
   },
+  "engines": {
+    "node": "6.0.2"
+  },
   "author": "Jesus Hernandez",
   "license": "ISC",
   "bugs": {
