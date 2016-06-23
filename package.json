@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Very api to apply test",
   "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JesusHV/amco_test.git"
