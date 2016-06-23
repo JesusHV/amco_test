@@ -28,7 +28,7 @@ app.use(bodyParser.json({ extended: true }));
  */
 app.get('/twet/:word', (req, res, next) => {
   const word = req.params.word;
-  return T.get('search/tweets', { q: 'iztapalapa', count: 5 }, function(err, data, response) {
+  return T.get('search/tweets', { q: word, count: 5 }, function(err, data, response) {
     res.send(data);
   });
 });
