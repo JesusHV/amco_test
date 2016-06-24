@@ -27,10 +27,19 @@ app.use(bodyParser.json({ extended: true }));
 /**
  * Corser allow all origins
  */
-app.use(corser.create());
+// app.use(corser.create());
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "api-twets.herokuapp.com");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+app.use(express.static('./dist'));
 /**
- * Endpoint 
+ * Endpoints
  */
+app.get('/',  (req, res) => {
+  res.sendFile('./dist/index.html');
+});
 app.get('/twet/:word', (req, res, next) => {
   const word = req.params.word;
   return T.get('search/tweets', { q: word, count: 5 }, function(err, data, response) {
