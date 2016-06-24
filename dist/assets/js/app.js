@@ -7112,7 +7112,7 @@ module.exports = HandlebarsCompiler.template({"1":function(depth0,helpers,partia
   stack1 = ((helper = (helper = helpers.statuses || (depth0 != null ? depth0.statuses : depth0)) != null ? helper : alias1),(options={"name":"statuses","hash":{},"fn":this.program(3, data, 0),"inverse":this.noop,"data":data}),(typeof helper === alias2 ? helper.call(depth0,options) : helper));
   if (!helpers.statuses) { stack1 = alias3.call(depth0,stack1,options)}
   if (stack1 != null) { buffer += stack1; }
-  return buffer + "\n\n      </div>\n    </div>\n  </dialog>\n\n\n\n\n";
+  return buffer + "        <div class=\"swiper-pagination\"></div>\n\n      </div>\n    </div>\n  </dialog>\n\n\n\n\n";
 },"useData":true});
 
 },{"hbsfy/runtime":23}],44:[function(require,module,exports){
