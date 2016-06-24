@@ -907,5 +907,3 @@ Example response:
 		"since_id_str": "0"
 	}
 }
-```js
-
