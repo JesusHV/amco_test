@@ -26,16 +26,11 @@ app.use(bodyParser.json({ extended: true }));
 /**
  * Corser allow all origins
  */
-app.use((req, res, next) => {
-  if (req.method === "OPTIONS") {
-    res.header("Access-Control-Allow-Origin", "*"); // restrict it to the required domain
-    res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
-    // Set custom headers for CORS
-    res.header("Access-Control-Allow-Headers", "Content-type,Accept");
-    return res.status(200).end();
-  } else {
+app.all('*', function(request, response, next) {
+    response.header('Access-Control-Allow-Headers', 'Content-Type,X-Requested-With,Authorization,Access-Control-Allow-Origin');
+    response.header('Access-Control-Allow-Methods', 'POST,GET,DELETE');
+    response.header('Access-Control-Allow-Origin', '*');
     next();
-  }
 });
 /**
  * Endpoint 
