@@ -43,6 +43,7 @@ app.use((req, res, next) => {
 app.get('/twet/:word', (req, res, next) => {
   const word = req.params.word;
   return T.get('search/tweets', { q: word, count: 5 }, function(err, data, response) {
+    data.searchWord = word;
     res.send(data);
   });
 });
