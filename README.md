@@ -905,5 +905,71 @@ Example response:
 		"count": 5,
 		"since_id": 0,
 		"since_id_str": "0"
-	}
+	},
+	"searchWord": "viernes",
+  "hashTags": [
+      {
+          "text": "ALaMexicana",
+          "indices": [
+              55,
+              67
+          ]
+      },
+      {
+          "text": "energia",
+          "indices": [
+              94,
+              102
+          ]
+      },
+      {
+          "text": "losveoenlatele",
+          "indices": [
+              114,
+              129
+          ]
+      },
+      {
+          "text": "escortlovers",
+          "indices": [
+              21,
+              34
+          ]
+      },
+      {
+          "text": "Viernes",
+          "indices": [
+              44,
+              52
+          ]
+      },
+      {
+          "text": "FridayByTheFace",
+          "indices": [
+              56,
+              72
+          ]
+      },
+      {
+          "text": "UniversiParty",
+          "indices": [
+              113,
+              127
+          ]
+      },
+      {
+          "text": "medellín",
+          "indices": [
+              98,
+              107
+          ]
+      },
+      {
+          "text": "viernes",
+          "indices": [
+              108,
+              116
+          ]
+      }
+  ]
 }
