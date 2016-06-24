@@ -3,6 +3,7 @@ const Twit       = require('twit');
 const express    = require('express');
 const app        = express();
 const bodyParser = require('body-parser');
+const corser     = require('corser');
 const config     = require('./config');
 const router     = express.Router();
 /**
@@ -26,12 +27,7 @@ app.use(bodyParser.json({ extended: true }));
 /**
  * Corser allow all origins
  */
-app.all('*', function(request, response, next) {
-    response.header('Access-Control-Allow-Headers', 'Content-Type,X-Requested-With,Authorization,Access-Control-Allow-Origin');
-    response.header('Access-Control-Allow-Methods', 'POST,GET,DELETE');
-    response.header('Access-Control-Allow-Origin', '*');
-    next();
-});
+app.use(corser.create());
 /**
  * Endpoint 
  */
