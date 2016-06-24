@@ -24,6 +24,20 @@ app.set('port', (process.env.PORT || config.server.port));
  */
 app.use(bodyParser.json({ extended: true }));
 /**
+ * Corser allow all origins
+ */
+app.use((req, res, next) => {
+  if (req.method === "OPTIONS") {
+    res.header("Access-Control-Allow-Origin", "*"); // restrict it to the required domain
+    res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
+    // Set custom headers for CORS
+    res.header("Access-Control-Allow-Headers", "Content-type,Accept");
+    return res.status(200).end();
+  } else {
+    next();
+  }
+});
+/**
  * Endpoint 
  */
 app.get('/twet/:word', (req, res, next) => {
