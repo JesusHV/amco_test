@@ -42,9 +42,18 @@ app.get('/',  (req, res) => {
 });
 app.get('/twet/:word', (req, res, next) => {
   const word = req.params.word;
-  return T.get('search/tweets', { q: word, count: 5 }, function(err, data, response) {
+  return T.get('search/tweets', { q: word, count: 10 }, function(err, data, response) {
+    const hashTags = [];
     data.searchWord = word;
-    console.log(data.searchWord)
+    // Collect all hashtags to root level
+    data.statuses.map(tweet => {
+      if (tweet.entities && tweet.entities.hashtags) {
+        tweet.entities.hashtags.map(hashtag =>  {
+          hashTags.push(hashtag);
+        });
+      }
+    });
+    data.hashTags = hashTags;
     res.send(data);
   });
 });
