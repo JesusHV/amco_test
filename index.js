@@ -9,10 +9,10 @@ const router     = express.Router();
  * Twitter Oauth sample
  */
 const T = new Twit({
-  consumer_key:         'u6dIf2YoxJXJdeVHL0BujnkSh',
-  consumer_secret:      'SAbANCEKEfCTzLBF99k9xQhK4lDVRL5optOCKZTO05nBeHoOpv',
-  access_token:         '87764398-NuEUM0foNJkLi8PG6yDvk6rnfeWsClNcoLOzVUDp8',
-  access_token_secret:  'SgyV8GMKTOUFSbJOS40fVZicEcY4kQ34EqMPGYich3TtH',
+  consumer_key:         config.twitter.consumer_key,
+  consumer_secret:      config.twitter.consumer_secret,
+  access_token:         config.twitter.access_token,
+  access_token_secret:  config.twitter.access_token_secret,
   timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
 });
 /**
